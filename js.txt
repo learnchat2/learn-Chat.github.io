@@ -1,0 +1,44 @@
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Example of login authentication
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username && password) {
+        document.getElementById('login-container').style.display = 'none';
+        document.getElementById('chat-container').style.display = 'flex';
+    } else {
+        alert('Please enter username and password');
+    }
+});
+
+document.getElementById('logout-btn').addEventListener('click', function() {
+    document.getElementById('chat-container').style.display = 'none';
+    document.getElementById('login-container').style.display = 'flex';
+});
+
+// Handle sending messages
+document.getElementById('send-btn').addEventListener('click', function() {
+    const message = document.getElementById('message').value;
+    const chatBox = document.getElementById('chat-box');
+
+    if (message.trim() !== '') {
+        const newMessage = document.createElement('div');
+        newMessage.classList.add('message');
+        newMessage.textContent = 'You: ' + message;
+        chatBox.appendChild(newMessage);
+        document.getElementById('message').value = ''; // Clear input after sending
+    }
+});
+
+// Handle file attachment
+document.getElementById('file-attachment').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const chatBox = document.getElementById('chat-box');
+        const fileMessage = document.createElement('div');
+        fileMessage.classList.add('message');
+        fileMessage.textContent = 'You attached a file: ' + file.name;
+        chatBox.appendChild(fileMessage);
+    }
+});

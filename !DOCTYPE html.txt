@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <h1>ChatGPT Login</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="chat-container" id="chat-container" style="display: none;">
+        <header>
+            <h1>ChatGPT</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+            <textarea id="message" placeholder="Type a message..."></textarea>
+            <div class="attach">
+                <input type="file" id="file-attachment" />
+            </div>
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
